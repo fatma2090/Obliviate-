@@ -1,4 +1,18 @@
-const characters = ['harry', 'ron', 'hermione', 'dumbledore', 'snape', 'voldemort', 'hagrid', 'malfoy', 'bellatrix', 'sirius', 'lupin', 'mcgonagall'];
+const characters = [
+    { name: 'harry', imageUrl: 'pictures/harry.jpg' },
+    { name: 'Ron', imageUrl: 'pictures/Ron.jpg' },
+    { name: 'Hermione', imageUrl: 'pictures/Hermione.jpg' },
+    { name: 'snape', imageUrl: 'pictures/snape.jpg' },
+    { name: 'Malfoy', imageUrl: 'pictures/Malfoy.jpg' },
+    { name: 'lupin', imageUrl: 'pictures/lupin.jpg' },
+    // Duplicating the cards
+    { name: 'harry', imageUrl: 'pictures/harry.jpg' },
+    { name: 'Ron', imageUrl: 'pictures/Ron.jpg' },
+    { name: 'Hermione', imageUrl: 'pictures/Hermione.jpg' },
+    { name: 'snape', imageUrl: 'pictures/snape.jpg' },
+    { name: 'Malfoy', imageUrl: 'pictures/Malfoy.jpg' },
+    { name: 'lupin', imageUrl: 'pictures/lupin.jpg' },
+];
 
 let cardsChosen = [];
 let cardsChosenId = [];
@@ -6,13 +20,25 @@ let cardsWon = [];
 
 function createBoard() {
     const grid = document.querySelector('.grid');
-    characters.forEach((character, index) => {
+    const shuffledCharacters = shuffle(characters); // Shuffle characters
+    const selectedCharacters = shuffledCharacters.slice(0, 12); // Select first 12 characters
+    selectedCharacters.forEach((character, index) => {
         const card = document.createElement('div');
         card.classList.add('card');
         card.setAttribute('data-id', index);
+        card.style.backgroundImage = `url('${character.imageUrl}')`;
         card.addEventListener('click', flipCard);
         grid.appendChild(card);
     });
+}
+
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 
 function flipCard() {
@@ -46,3 +72,4 @@ function checkForMatch() {
 }
 
 createBoard();
+
