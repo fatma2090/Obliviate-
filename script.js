@@ -20,40 +20,16 @@ let cardsWon = [];
 
 function createBoard() {
     const grid = document.querySelector('.grid');
-    const shuffledCharacters = shuffle(characters);
-    let count = 0; // Track the number of cards created
-    for (let i = 0; i < shuffledCharacters.length; i++) {
-        const character = shuffledCharacters[i];
-        console.log(character.imageUrl); // Log the image URL
-        const img = new Image();
-        img.onload = function() {
-            const card = document.createElement('div');
-            card.classList.add('card');
-            card.setAttribute('data-id', count);
-            card.style.backgroundImage = `url('${character.imageUrl}')`;
-            card.addEventListener('click', flipCard);
-            grid.appendChild(card);
-    
-        };
-        
-        img.src = character.imageUrl;
-        count++;
-            if (count === 12) { 
-                break;
-            }  
-    }
+    characters.forEach((character, index) => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.setAttribute('data-id', index);
+        card.style.backgroundImage = `url('${character.imageUrl}')`;
+        card.addEventListener('click', flipCard);
+        grid.appendChild(card);
+    });
 }
 
-
-
-
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-}
 
 function flipCard() {
     const cardId = this.getAttribute('data-id');
@@ -84,5 +60,6 @@ function checkForMatch() {
         alert('Congratulations! You found all the matches!');
     }
 }
+
 
 createBoard();

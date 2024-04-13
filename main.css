@@ -16,6 +16,7 @@ h1 {
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 10px;
     padding-left: 220px;
 }
@@ -32,6 +33,14 @@ h1 {
     font-size: 16px;
     cursor: pointer;
     margin: 5px; 
+}
+
+.card.flip {
+    background-color: #fff;
+}
+
+.hidden {
+    display: none;
 }
 
 .matched {
