@@ -20,17 +20,31 @@ let cardsWon = [];
 
 function createBoard() {
     const grid = document.querySelector('.grid');
-    const shuffledCharacters = shuffle(characters); // Shuffle characters
-    const selectedCharacters = shuffledCharacters.slice(0, 12); // Select first 12 characters
-    selectedCharacters.forEach((character, index) => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        card.setAttribute('data-id', index);
-        card.style.backgroundImage = `url('${character.imageUrl}')`;
-        card.addEventListener('click', flipCard);
-        grid.appendChild(card);
-    });
+    const shuffledCharacters = shuffle(characters);
+    let count = 0; // Track the number of cards created
+    for (let i = 0; i < shuffledCharacters.length; i++) {
+        const character = shuffledCharacters[i];
+        console.log(character.imageUrl); // Log the image URL
+        const img = new Image();
+        img.onload = function() {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.setAttribute('data-id', count);
+            card.style.backgroundImage = `url('${character.imageUrl}')`;
+            card.addEventListener('click', flipCard);
+            grid.appendChild(card);
+    
+        };
+        
+        img.src = character.imageUrl;
+        count++;
+            if (count === 12) { 
+                break;
+            }  
+    }
 }
+
+
 
 
 function shuffle(array) {
@@ -54,10 +68,10 @@ function flipCard() {
 function checkForMatch() {
     const cards = document.querySelectorAll('.card');
     const [optionOneId, optionTwoId] = cardsChosenId;
-    if (cardsChosen[0] === cardsChosen[1]) {
+    if (cardsChosen[0].name === cardsChosen[1].name) {
         alert('You found a match!');
-        cards[optionOneId].classList.add('hidden');
-        cards[optionTwoId].classList.add('hidden');
+        cards[optionOneId].classList.add('matched');
+        cards[optionTwoId].classList.add('matched');
         cardsWon.push(cardsChosen);
     } else {
         cards[optionOneId].classList.remove('flip');
@@ -72,4 +86,3 @@ function checkForMatch() {
 }
 
 createBoard();
-
