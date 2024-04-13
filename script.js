@@ -62,4 +62,9 @@ function checkForMatch() {
 }
 
 
+const audio = new Audio("Obliviate-/Hedwig's Theme.mp3");
+audio.loop = true;
+audio.play();
+
+
 createBoard();

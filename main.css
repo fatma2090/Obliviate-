@@ -2,6 +2,7 @@ h1 {
     font-size: 60px; 
     color: black;
     background-color: rgb(54, 54, 61);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .container {
@@ -46,4 +47,17 @@ h1 {
 .matched {
     opacity: 0.5; 
     pointer-events: none;
+}
+
+.music {
+    background-color: rgb(54, 54, 61);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+    left: 10px; 
+    top: 50px; 
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 1;
+    font-size: small;
+    font-weight: bold;
 }
