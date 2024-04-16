@@ -1,9 +1,60 @@
 h1 {
+    font-size: 40px; 
+    color: rgb(68, 9, 9);
+    background-color: rgb(121, 105, 105);
+    font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 700px;
+}
+
+
+h2 {
     font-size: 60px; 
     color: black;
     background-color: rgb(54, 54, 61);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+.timer {
+    position: absolute;
+    top: 10%;
+    left: 20px;
+    font-size: 20px;
+    color: rgb(68, 9, 9);
+    font-weight: bold;  
+}
+
+#score-counter {
+    position: absolute;
+    top: 40px; 
+    left: 20px; 
+    font-size: 24px; 
+    color: rgb(68, 9, 9); 
+    font-weight: bold; 
+}
+
+#start-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(68, 9, 9);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+#restart-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(68, 9, 9);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 1000px;
+}
+
 
 .container {
     text-align: center;
@@ -20,6 +71,7 @@ h1 {
     grid-template-rows: repeat(3, 1fr);
     gap: 10px;
     padding-left: 220px;
+    position: relative;
 }
 
 .card {
@@ -37,7 +89,7 @@ h1 {
 }
 
 .card.flip {
-    background-color: #fff;
+    background-color: whitesmoke;
 }
 
 .hidden {
@@ -50,14 +102,12 @@ h1 {
 }
 
 .music {
-    background-color: rgb(54, 54, 61);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     position: absolute;
-    left: 10px; 
-    top: 50px; 
+    top: 20px; 
+    left: 1500px; 
+    color: rgb(68, 9, 9);
+    background-color: rgb(121, 105, 105);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 10px;
     border-radius: 10px;
-    z-index: 1;
-    font-size: small;
-    font-weight: bold;
 }

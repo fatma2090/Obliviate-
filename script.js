@@ -31,6 +31,14 @@ function createBoard() {
 }
 
 
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 function flipCard() {
     const cardId = this.getAttribute('data-id');
     cardsChosen.push(characters[cardId]);
@@ -57,14 +65,79 @@ function checkForMatch() {
     cardsChosen = [];
     cardsChosenId = [];
     if (cardsWon.length === characters.length / 2) {
-        alert('Congratulations! You found all the matches!');
+        alert('Congratulations! Mischief Managed!');
     }
 }
 
-
-const audio = new Audio("Obliviate-/Hedwig's Theme.mp3");
-audio.loop = true;
-audio.play();
-
-
 createBoard();
+
+//////// Score ///////
+
+let score = 0;
+
+function updateScore() {
+    document.getElementById("score").textContent = score;
+}
+function incrementScore() {
+    score++;
+    updateScore(); 
+}
+function resetScore() {
+    score = 0;
+    updateScore(); 
+}
+resetScore();
+
+////// Start botton  +   Time left ///////
+
+let timeLeft = 30; 
+let timerInterval; 
+
+document.getElementById('start-button').addEventListener('click', () => {
+    if (!timerInterval) {
+        timerInterval = setInterval(() => {
+            document.querySelector('.time-left').textContent = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval); 
+                alert("Time's up! You lost.");
+            } else {
+                timeLeft--;
+            }
+        }, 1000); 
+    }
+});
+
+
+document.getElementById('restart-button').addEventListener('click', () => {
+    
+    timeLeft = 30;
+    clearInterval(timerInterval);
+    timerInterval = null; 
+    document.querySelector('.time-left').textContent = timeLeft;
+});
+
+
+//////// Restart botton //////
+
+function restartGame() {
+    console.log("Restarting the game..."); 
+    location.reload();
+}
+
+document.getElementById("restart-button").addEventListener("click", restartGame);
+
+/////// End Game ////////
+
+function endGame() {
+    document.querySelectorAll('.card').forEach(card => {
+        card.removeEventListener('click', flipCard);
+    });
+    alert('Time is up! You lost the game.');
+}
+const GAME_DURATION = 30000;
+
+setTimeout(endGame, GAME_DURATION);
+
+
+
