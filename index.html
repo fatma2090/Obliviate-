@@ -7,12 +7,19 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <h1>I solemnly swear I am up to no good !</h1>
+    <div class="responsive-div"></div>
     <div class="container">
-        <h2>Obliviate</h2>
+        <h1>Obliviate</h1>
         <button id="start-button">Start</button>
-        <div id="score-counter">Score: <span id="score">0</span></div>
-        <div class="timer">Time left: <span id="timer">30</span> seconds</div>
+        <div class="score-timer-container">
+            <div class="timer">
+                Time left: <span id="timer">30</span> seconds
+            </div>
+            <div id="score-counter">
+                Score: <span id="score">0</span>
+            </div>
+        </div>
+        
         <div class="actions">
             <button id="restart-button">Restart</button>
         </div>
@@ -21,7 +28,7 @@
     </div>
 
     <div class="music">
-        <p>Feel the magic by playing hedwig's theme song</p>
+        <p>Feel the magic!</p>
         <audio controls>
         <source src="Hedwig's Theme.mp3" type="audio/mpeg">
       Your browser does not support the audio element.

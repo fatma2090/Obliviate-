@@ -1,36 +1,38 @@
+.responsive-div {
+    height: 100px;
+    width: 100px;
+  }
+
 h1 {
-    font-size: 40px; 
-    color: rgb(68, 9, 9);
-    background-color: rgb(121, 105, 105);
-    font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding-left: 700px;
-}
-
-
-h2 {
     font-size: 60px; 
     color: black;
-    background-color: rgb(54, 54, 61);
+    background-color: rgb(49, 48, 48);
+    background-size: cover; 
+    background-position: center top;
     font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.score-timer-container {
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+    background-color: rgb(49, 48, 48);
+    padding: 10px; 
+    border-radius: 10px; 
 }
 
 .timer {
-    position: absolute;
-    top: 10%;
-    left: 20px;
     font-size: 20px;
-    color: rgb(68, 9, 9);
-    font-weight: bold;  
+    color: white;
+    font-weight: bold;
 }
 
 #score-counter {
-    position: absolute;
-    top: 40px; 
-    left: 20px; 
-    font-size: 24px; 
-    color: rgb(68, 9, 9); 
-    font-weight: bold; 
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
 }
+
 
 #start-button {
     padding: 10px 20px;
@@ -55,7 +57,6 @@ h2 {
     top: 1000px;
 }
 
-
 .container {
     text-align: center;
     margin-top: 50px;
@@ -69,8 +70,8 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 10px;
-    padding-left: 220px;
+    gap: 3px;
+    padding-left: 320px;
     position: relative;
 }
 
@@ -103,11 +104,13 @@ h2 {
 
 .music {
     position: absolute;
-    top: 20px; 
-    left: 1500px; 
+    bottom: 0,25px; 
+    left: 50px; 
     color: rgb(68, 9, 9);
-    background-color: rgb(121, 105, 105);
+    background-image: url(pictures/harry-potter-vector-icons.jpg);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
+    font-size: 15px;
+    font-weight: bolder;
 }

@@ -24,6 +24,7 @@ function createBoard() {
         const card = document.createElement('div');
         card.classList.add('card');
         card.setAttribute('data-id', index);
+        card.setAttribute('data-name', character.name); 
         card.style.backgroundImage = `url('${character.imageUrl}')`;
         card.addEventListener('click', flipCard);
         grid.appendChild(card);
@@ -65,7 +66,7 @@ function checkForMatch() {
     cardsChosen = [];
     cardsChosenId = [];
     if (cardsWon.length === characters.length / 2) {
-        alert('Congratulations! Mischief Managed!');
+        alert('Congrats! Mischief Managed!');
     }
 }
 
@@ -88,34 +89,28 @@ function resetScore() {
 }
 resetScore();
 
-////// Start botton  +   Time left ///////
+////// Start botton ///////
 
-let timeLeft = 30; 
-let timerInterval; 
+let timer; 
 
 document.getElementById('start-button').addEventListener('click', () => {
-    if (!timerInterval) {
-        timerInterval = setInterval(() => {
-            document.querySelector('.time-left').textContent = timeLeft;
-
-            if (timeLeft <= 0) {
-                clearInterval(timerInterval); 
-                alert("Time's up! You lost.");
-            } else {
-                timeLeft--;
-            }
-        }, 1000); 
-    }
+    document.getElementById('start-button').style.display = 'none'; 
+    startTimer();
 });
 
+function startTimer() {
+    let timeLeft = 30; 
 
-document.getElementById('restart-button').addEventListener('click', () => {
-    
-    timeLeft = 30;
-    clearInterval(timerInterval);
-    timerInterval = null; 
-    document.querySelector('.time-left').textContent = timeLeft;
-});
+    timer = setInterval(() => {
+        timeLeft--; 
+        document.getElementById('timer').textContent = `Time Left: ${timeLeft} seconds`;
+
+        if (timeLeft === 0) {
+            clearInterval(timer); 
+            alert('Time\'s up!'); 
+        }
+    }, 1000);
+}
 
 
 //////// Restart botton //////
@@ -127,17 +122,7 @@ function restartGame() {
 
 document.getElementById("restart-button").addEventListener("click", restartGame);
 
-/////// End Game ////////
 
-function endGame() {
-    document.querySelectorAll('.card').forEach(card => {
-        card.removeEventListener('click', flipCard);
-    });
-    alert('Time is up! You lost the game.');
-}
-const GAME_DURATION = 30000;
-
-setTimeout(endGame, GAME_DURATION);
 
 
 
