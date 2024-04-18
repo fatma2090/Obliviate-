@@ -15,7 +15,7 @@ Features:
 
 How to Play:
 
-    - Before you start the game, you must say the magical spell "I solemnly swear I am up to no good" to unlock the secrets of Obliviate!
+    - Say the magical spell "I solemnly swear I am up to no good" to unlock the secrets of Obliviate!
     - Click the Start button to begin the game.
     - Click on cards to flip them and reveal the characters.
     - Try to match pairs of identical characters.
