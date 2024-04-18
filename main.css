@@ -12,7 +12,7 @@ h1 {
     font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.score-timer-container {
+.timer-container {
     position: absolute;
     bottom: 5px;
     right: 15px;
@@ -23,12 +23,6 @@ h1 {
 
 .timer {
     font-size: 20px;
-    color: white;
-    font-weight: bold;
-}
-
-#score-counter {
-    font-size: 24px;
     color: white;
     font-weight: bold;
 }
@@ -136,6 +130,14 @@ h1 {
     max-width: 1500px; 
 }
 
+.notification-message {
+    margin-bottom: 10px; 
+}
+
+.notification-gif {
+    display: block;
+    margin-top: 5px; 
+}
 
 .music {
     position: absolute;
