@@ -6,7 +6,7 @@ Description:
 
 Obliviate is a memory game where players try to match pairs of Harry Potter character cards. It's a fun and challenging game suitable for all ages.
 
-Features
+Features:
 
     Dynamic card generation
     Timer and score tracking
