@@ -34,6 +34,6 @@ Obliviate is a memory game where players try to match pairs of Harry Potter char
     - CSS
     - JavaScript
 
-### Contributing:
+
 
 Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
