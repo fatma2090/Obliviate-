@@ -8,30 +8,30 @@ Obliviate is a memory game where players try to match pairs of Harry Potter char
 
 Features:
 
-    Dynamic card generation
-    Timer and score tracking
-    Restart functionality
-    Notification system for game events
+    - Dynamic card generation
+    - Timer and score tracking
+    - Restart functionality
+    - Notification system for game events
 
 How to Play:
 
-    Click the Start button to begin the game.
-    Click on cards to flip them and reveal the characters.
-    Try to match pairs of identical characters.
-    The game ends when all pairs are matched or time runs out.
+    - Click the Start button to begin the game.
+    - Click on cards to flip them and reveal the characters.
+    - Try to match pairs of identical characters.
+    - The game ends when all pairs are matched or time runs out.
 
 Installation:
 
 To play the game locally, follow these steps:
 
-    Clone the repository: git clone https://github.com/your-username/harry-potter-memory-game.git
-    Open the index.html file in your web browser.
+    - Clone the repository: git clone (https://github.com/fatma2090/Obliviate-)
+    - Open the index.html file in your web browser.
 
 Technologies Used:
 
-    HTML
-    CSS
-    JavaScript
+    - HTML
+    - CSS
+    - JavaScript
 
 Contributing:
 
