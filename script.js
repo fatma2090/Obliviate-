@@ -17,6 +17,7 @@ const characters = [
 let cardsChosen = [];
 let cardsChosenId = [];
 let cardsWon = [];
+let isGameStarted = false;
 
 function createBoard() {
     const grid = document.querySelector('.grid');
@@ -24,23 +25,45 @@ function createBoard() {
         const card = document.createElement('div');
         card.classList.add('card');
         card.setAttribute('data-id', index);
-        card.setAttribute('data-name', character.name); 
-        card.style.backgroundImage = `url('${character.imageUrl}')`;
-        card.addEventListener('click', flipCard);
+        
+        const frontFace = document.createElement('div');
+        frontFace.classList.add('front-face');
+        frontFace.style.backgroundImage = `url('pictures/Hogwarts-Crest.png')`;
+        
+        const backFace = document.createElement('div');
+        backFace.classList.add('back-face');
+        backFace.style.backgroundImage = `url('${character.imageUrl}')`;
+        
+        card.appendChild(frontFace);
+        card.appendChild(backFace);
+        
         grid.appendChild(card);
     });
 }
 
+function enableCardClick() {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('click', flipCard);
+    });
+}
 
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+function disableCardClick() {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.removeEventListener('click', flipCard);
+    });
+}
+
+function startGame() {
+    isGameStarted = true;
+    enableCardClick();
 }
 
 function flipCard() {
+    if (!isGameStarted) {
+        return; // Do nothing if the game has not started
+    }
     const cardId = this.getAttribute('data-id');
     cardsChosen.push(characters[cardId]);
     cardsChosenId.push(cardId);
@@ -54,23 +77,36 @@ function checkForMatch() {
     const cards = document.querySelectorAll('.card');
     const [optionOneId, optionTwoId] = cardsChosenId;
     if (cardsChosen[0].name === cardsChosen[1].name) {
-        alert('You found a match!');
+        showNotification('You found a match!');
         cards[optionOneId].classList.add('matched');
         cards[optionTwoId].classList.add('matched');
         cardsWon.push(cardsChosen);
     } else {
         cards[optionOneId].classList.remove('flip');
         cards[optionTwoId].classList.remove('flip');
-        alert('Sorry, try again!');
+        showNotification('Sorry, try again!');
     }
     cardsChosen = [];
     cardsChosenId = [];
     if (cardsWon.length === characters.length / 2) {
-        alert('Congrats! Mischief Managed!');
+        showNotification('Congratulations! Mischief Managed!');
     }
 }
 
+document.getElementById('start-button').addEventListener('click', startGame);
+
 createBoard();
+
+//////// Notification ///////
+
+function showNotification(message) {
+    const notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.style.display = 'block';
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 1500); 
+}
 
 //////// Score ///////
 
