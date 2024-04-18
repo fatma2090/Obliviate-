@@ -1,7 +1,7 @@
 # A Harry Potter Memory Game
+
 Welcome to Obliviate, a memory game based on the Harry Potter universe!
 
-![Harry Potter GIF]([https://media.giphy.com/media/cz5gkVEv8Y7q0/giphy.gif](https://www.theworks.co.uk/on/demandware.static/-/Sites-TWS-UK-Library/default/dw311fa5d9/images/store/blog/1%20your-a-wizard-harry.gif))
 
 ### Description:
 
@@ -25,7 +25,7 @@ Obliviate is a memory game where players try to match pairs of Harry Potter char
 
 ### Installation:
 
-    - Clone the repository: git clone (https://github.com/fatma2090/Obliviate-)
+    - Clone the repository: git clone 
     - Open the index.html file in your web browser.
 
 ### Technologies Used:
