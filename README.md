@@ -1,6 +1,9 @@
-Harry Potter Memory Game
+#Harry Potter Memory Game
 
 Welcome to Obliviate, a memory game based on the Harry Potter universe!
+
+![Harry Potter GIF]([https://media.giphy.com/media/cz5gkVEv8Y7q0/giphy.gif](https://www.theworks.co.uk/on/demandware.static/-/Sites-TWS-UK-Library/default/dw311fa5d9/images/store/blog/1%20your-a-wizard-harry.gif))
+
 
 Description:
 
