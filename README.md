@@ -2,7 +2,7 @@
 
 Welcome to Obliviate, a memory game based on the Harry Potter universe!
 
-![Obliviate](pictures/Game.jpg)
+![Obliviate](pictures/Game.JPG)
 
 ### Description:
 
