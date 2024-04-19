@@ -139,11 +139,11 @@ document.getElementById('start-button').addEventListener('click', () => {
 });
 
 function startTimer() {
-    let timeLeft = 30;
+    let timeLeft = 45;
 
     timer = setInterval(() => {
         timeLeft--; 
-        document.getElementById('timer').textContent = `Time Left: ${timeLeft} seconds`;
+        document.getElementById('timer').textContent = `Time Left: ${timeLeft} `;
 
         if (timeLeft === 0) {
             clearInterval(timer);
